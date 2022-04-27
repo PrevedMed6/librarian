@@ -1,14 +1,51 @@
 <section class="book-list">
-  <table>
+  <div class="management-board">
+    <form>
+      <div class="input-group col-md-4">
+        <input class="form-control py-2" type="search">
+        <button type="button" class="btn btn-outline-success">Искать</button>
+      </div>
+    </form>
+    <button type="button" onclick="window.open('/create')" class="btn btn-outline-primary">Добавить книгу</button>
+  </div>
+  <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Имя</th>
-        <th>возраст</th>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Жанр</th>
+        <th>В наличии</th>
         <th></th>
       </tr>
     </thead>
       <tbody>
+        {{#each books}}
+            <tr data-rowid="{{this._id}}">
+              <td>{{this.title}}</td>
+              <td>{{this.author}}</td>
+              <td>{{this.genre}}</td>
+              <td>{{this.inStock}}</td>
+              <td class="buttons-cell">
+                <button type="button" class="btn btn-outline-primary">Редактировать</button>
+                <button type="button" onclick="DeleteBook('{{this._id}}')" class="btn btn-outline-danger">Удалить</button>
+              </td>
+            </tr>
+         {{/each}}
       </tbody>
   </table>
 </section>
+<script>
+ // Удаление книги
+async function DeleteBook(id) {
+  if(confirm('Удалить запись?'))
+  {
+    const response = await fetch("/delete/" + id, {
+    method: 'DELETE',
+    headers: { "Accept": "application/json" }
+    });
+    if (response.ok === true) {
+      document.querySelector("tr[data-rowid='" + id + "']").remove();
+    }
+  }
+}
+</script>

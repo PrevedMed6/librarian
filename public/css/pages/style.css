@@ -6,6 +6,14 @@
 @import url(../blocks/header/__title/header__title.css);
 /*Блок book-list*/
 @import url(../blocks/book-list/book-list.css);
+/*Блок work-with-book*/
+@import url(../blocks/work-with-book/work-with-book.css);
 /*Блок footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
+/*Блок panel-body*/
+@import url(../blocks/panel-body/panel-body.css);
+/*Блок buttons-cell*/
+@import url(../blocks/buttons-cell/buttons-cell.css);
+/*Блок management-board*/
+@import url(../blocks/management-board/management-board.css);

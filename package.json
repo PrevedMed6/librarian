@@ -2,6 +2,7 @@
     "name": "librarian",
     "version": "1.0.0",
     "dependencies": {
+        "bootstrap": "^5.1.3",
         "express": "^4.17.0",
         "express-handlebars": "^6.0.5",
         "hbs": "^4.2.0",
