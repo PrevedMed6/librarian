@@ -1,12 +1,6 @@
 <section class="book-list">
   <div class="management-board">
-    <form>
-      <div class="input-group col-md-4">
-        <input class="form-control py-2" type="search">
-        <button type="button" class="btn btn-outline-success">Искать</button>
-      </div>
-    </form>
-    <button type="button" onclick="window.open('/create')" class="btn btn-outline-primary">Добавить книгу</button>
+    <button type="button" onclick="location.href ='/create'" class="btn btn-outline-primary">Добавить книгу</button>
   </div>
   <table class="table">
     <thead>
@@ -26,7 +20,7 @@
               <td>{{this.genre}}</td>
               <td>{{this.inStock}}</td>
               <td class="buttons-cell">
-                <button type="button" class="btn btn-outline-primary">Редактировать</button>
+                <button type="button" onclick="location.href ='/edit/{{this._id}}'" class="btn btn-outline-primary">Редактировать</button>
                 <button type="button" onclick="DeleteBook('{{this._id}}')" class="btn btn-outline-danger">Удалить</button>
               </td>
             </tr>
