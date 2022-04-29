@@ -24,7 +24,6 @@ exports.getBooks = function(request, response){
   });
 };
 exports.postBook= function(request, response){
- console.log('Тут');
  const id = request.body._id;
  const title = request.body.title;
  const author = request.body.author;
